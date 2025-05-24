@@ -45,6 +45,7 @@ const storage =
     : createWebStorage('local')
 
 const persistConfig = {
+  timeout: 1000,
   key: 'root',
   storage,
   whitelist: ['global'],
@@ -81,7 +82,7 @@ export default function StoreProvider({
 }: {
   children: React.ReactNode
 }) {
-  const storeRef = useRef<AppStore | null>(null)
+   const storeRef = useRef<AppStore | null>(null)
   if (!storeRef.current) {
     storeRef.current = makeStore()
     setupListeners(storeRef.current.dispatch)
@@ -95,4 +96,5 @@ export default function StoreProvider({
       </PersistGate>
     </Provider>
   )
+//return <Provider store={storeRef.current}>{children}</Provider>
 }

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
+@custom-variant dark (&:where(.dark, .dark *));
 
 *,
 *::before,
@@ -19,3 +20,22 @@ body,
   @apply dark:bg-gray-900;
   @apply dark:text-gray-50;
 }
+
+@media (min-width: 768px) {
+  .custom-grid-rows {
+    grid-template-rows: repeat(8, 20vh);
+  }
+}
+
+@media (min-width: 1280px) {
+  .custom-grid-rows {
+    grid-template-rows: repeat(8, 7.5vh);
+  }
+}
+/* .light {
+  @apply bg-gray-50 text-gray-900;
+}
+
+.dark {
+  @apply bg-gray-900 text-gray-50;
+} */
