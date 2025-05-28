@@ -16,6 +16,7 @@
   "type": "commonjs",
   "dependencies": {
     "@prisma/client": "^6.8.2",
+    "axios": "^1.9.0",
     "body-parser": "^2.2.0",
     "concurrently": "^9.1.2",
     "cors": "^2.8.5",
